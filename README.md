@@ -1,8 +1,6 @@
 # parse-files-utils
-[![Build Status](https://travis-ci.org/parse-server-modules/parse-files-utils.svg?branch=master)](https://travis-ci.org/parse-server-modules/parse-files-utils)
-[![codecov](https://codecov.io/gh/parse-server-modules/parse-files-utils/branch/master/graph/badge.svg)](https://codecov.io/gh/parse-server-modules/parse-files-utils)
 
-Utilities to list and migrate Parse files.
+Utilities to list and migrate Parse files. Modified by Tribalyte to support files in arrays. See https://github.com/parse-server-modules/parse-files-utils/issues/35
 
 This utility will do the following:
 
@@ -83,7 +81,8 @@ Accepted options:
 * `gcs_projectId`: GCS project id.
 * `gcs_keyFilename`: GCS key filename (ie. `credentials.json`).
 * `gcs_bucket`: GCS bucket name.
-* `asyncLimit`: The number of files to process at the same time (default: 5).
+* `asyncLimit`: The number of files to process at the same time (default: 1). Use 1 for safety, even if slower.
+* `fileUrlPrefix`: The URL to be prefixed to the file name to generate the new file URL.
 
 
 ## Parse File Migrations
